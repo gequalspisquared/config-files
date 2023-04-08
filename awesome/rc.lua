@@ -187,6 +187,8 @@ screen.connect_signal("property::geometry", set_wallpaper)
 
 -- Widgets
 local battery_widget = require("awesome-wm-widgets.battery-widget.battery")
+local volume_widget = require("awesome-wm-widgets.volume-widget.volume")
+local brightness_widget = require("awesome-wm-widgets.brightness-widget.brightness")
 
 
 awful.screen.connect_for_each_screen(function(s)
@@ -239,6 +241,15 @@ awful.screen.connect_for_each_screen(function(s)
         { -- Right widgets
             layout = wibox.layout.fixed.horizontal,
 	    battery_widget(),
+	    -- volume_widget(),
+	    volume_widget {
+                widget_type = 'arc',
+		size = 32
+	    },
+	    brightness_widget {
+	        program = 'light',
+
+	    },
             -- mykeyboardlayout,
             -- wibox.widget.systray(),
             mytextclock,
@@ -347,6 +358,12 @@ globalkeys = gears.table.join(
 
     awful.key({ modkey },            "b",     function () awful.spawn.with_shell("firefox") end,
               {description = "open browser", group = "launcher"}),
+
+    awful.key({ modkey }, "]", function() volume_widget:inc(5) end),
+    awful.key({ modkey }, "[", function() volume_widget:dec(5) end),
+    awful.key({ modkey }, "\\", function() volume_widget:toggle() end),
+    awful.key({ modkey         }, ";", function () brightness_widget:inc() end, {description = "increase brightness", group = "custom"}),
+    awful.key({ modkey, "Shift"}, ";", function () brightness_widget:dec() end, {description = "decrease brightness", group = "custom"}),
 
     awful.key({ modkey }, "x",
               function ()
