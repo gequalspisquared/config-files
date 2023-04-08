@@ -54,7 +54,7 @@ beautiful.init("~/.config/awesome/theme/theme.lua")
 -- beautiful.init("~/.config/awesome/themes/blackburn/theme.lua")
 
 -- This is used later as the default terminal and editor to run.
-terminal = "kitty"
+terminal = "alacritty"
 editor = os.getenv("EDITOR") or "nvim"
 editor_cmd = terminal .. " -e " .. editor
 
@@ -639,6 +639,8 @@ end
 
 -- Autostart wifi
 awful.util.spawn_with_shell("pgrep -u $USER -x nm-applet > /dev/null || (nm-applet &)")
+awful.util.spawn_with_shell("feh --bg-scale --randomize ~/.config/awesome/wallpapers/*")
+awful.util.spawn_with_shell("compton &")
 
 -- Scale for my screen
 -- awful.screen.set_auto_dpi_enabled(true)
