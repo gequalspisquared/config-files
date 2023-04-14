@@ -7,6 +7,8 @@ folders=(
     "$HOME/.config/awesome" 
     "$HOME/.config/rofi"
     "$HOME/.zshrc"
+    "$HOME/.tmux.conf"
+    "$HOME/.tmux"
 )
 
 echo Removing old files;
