@@ -54,6 +54,15 @@ return require('packer').startup(function(use)
 
   use ('christoomey/vim-tmux-navigator')
 
+  use {
+      'numToStr/Comment.nvim',
+      config = function()
+          require('Comment').setup()
+      end
+  }
+
+  use ('nvim-tree/nvim-tree.lua')
+
   -- use {'akinsho/bufferline.nvim', tag = "v3.*", requires = 'nvim-tree/nvim-web-devicons'}
 
 end)
