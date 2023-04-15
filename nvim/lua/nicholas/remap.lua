@@ -1,5 +1,8 @@
+print("Hello remap")
 -- vim.g.mapleader = " " -- set in set.lua
-vim.keymap.set("n", "<leader>pe", ":Ex<CR>")
+vim.g.mapleader = " "
+
+vim.keymap.set("n", "<leader>ee", ":Ex<CR>")
 
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
@@ -33,4 +36,4 @@ vim.keymap.set("n", "<leader>Y", [["+Y]])
 -- plugins
 
 -- NvimTree
-vim.keymap.set("n", "<leader>pt", ":NvimTreeToggle<CR>")
+vim.keymap.set("n", "<leader>et", ":NvimTreeToggle<CR>")
