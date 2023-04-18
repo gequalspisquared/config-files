@@ -12,7 +12,7 @@ folders=(
 )
 
 echo Removing old files;
-find . -maxdepth 1 ! -name 'update.sh' ! -name ".git" ! -name "."  -type d -exec rm -rf {} +;
+find . -maxdepth 1 ! -name 'update.sh' ! -name ".git*" ! -name "." -type d -exec rm -rf {} +;
 
 for i in "${folders[@]}"
 do
