@@ -63,6 +63,11 @@ return require('packer').startup(function(use)
 
   use ('nvim-tree/nvim-tree.lua')
 
+  use {
+      "windwp/nvim-autopairs",
+      config = function() require("nvim-autopairs").setup {} end
+  }
+
   -- use {'akinsho/bufferline.nvim', tag = "v3.*", requires = 'nvim-tree/nvim-web-devicons'}
 
 end)
