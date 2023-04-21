@@ -14,4 +14,10 @@ require('tokyonight').setup({
     dim_inactive = true,
 })
 
+require('rose-pine').setup({
+    variant = 'dawn',
+    dim_nc_background = true,
+
+})
+
 ColorMyPencils()
