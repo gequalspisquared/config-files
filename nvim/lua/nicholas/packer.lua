@@ -69,6 +69,6 @@ use {
     config = function() require("nvim-autopairs").setup {} end
 }
 
--- use {'akinsho/bufferline.nvim', tag = "v3.*", requires = 'nvim-tree/nvim-web-devicons'}
+use {'akinsho/bufferline.nvim', tag = "v3.*", requires = 'nvim-tree/nvim-web-devicons'}
 
 end)
