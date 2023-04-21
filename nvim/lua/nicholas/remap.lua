@@ -29,16 +29,16 @@ vim.keymap.set("n", "<leader>tx", ":tabclose<CR>") -- close current tab
 vim.keymap.set("n", "<leader>tn", ":tabn<CR>") -- go to next tab
 vim.keymap.set("n", "<leader>tp", ":tabp<CR>") -- go to previous tab
 -- tab navigation
--- vim.keymap.set("n", "<leader>1", "1gt")
--- vim.keymap.set("n", "<leader>2", "2gt")
--- vim.keymap.set("n", "<leader>3", "3gt")
--- vim.keymap.set("n", "<leader>4", "4gt")
--- vim.keymap.set("n", "<leader>5", "5gt")
--- vim.keymap.set("n", "<leader>6", "6gt")
--- vim.keymap.set("n", "<leader>7", "7gt")
--- vim.keymap.set("n", "<leader>8", "8gt")
--- vim.keymap.set("n", "<leader>9", "9gt")
--- vim.keymap.set("n", "<leader>0", ":tablast<CR>")
+vim.keymap.set("n", "<leader>t1", "1gt")
+vim.keymap.set("n", "<leader>t2", "2gt")
+vim.keymap.set("n", "<leader>t3", "3gt")
+vim.keymap.set("n", "<leader>t4", "4gt")
+vim.keymap.set("n", "<leader>t5", "5gt")
+vim.keymap.set("n", "<leader>t6", "6gt")
+vim.keymap.set("n", "<leader>t7", "7gt")
+vim.keymap.set("n", "<leader>t8", "8gt")
+vim.keymap.set("n", "<leader>t9", "9gt")
+vim.keymap.set("n", "<leader>t0", ":tablast<CR>")
 
 -- greatest remap ever
 -- paste without copying to buffer
