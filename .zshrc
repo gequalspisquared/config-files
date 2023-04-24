@@ -1,8 +1,10 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH=$HOME/.config/emacs/bin:$HOME/.local/bin:$PATH
 
 # Run at launch
-tmux attach -t main
+# tmux attach -t main
+cowsay Hello $USER | lolcat
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
