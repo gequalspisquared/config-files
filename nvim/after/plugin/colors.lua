@@ -11,7 +11,7 @@ function ColorMyPencils(color)
 end
 
 require('tokyonight').setup({
-    dim_inactive = true,
+    -- dim_inactive = true,
 })
 
 require('rose-pine').setup({

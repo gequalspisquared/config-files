@@ -1,74 +1,99 @@
 -- This file can be loaded by calling `lua require('plugins')` from your init.vim
 
 -- Only required if you have packer configured as `opt`
-vim.cmd [[packadd packer.nvim]]
+vim.cmd.packadd('packer.nvim')
 
 return require('packer').startup(function(use)
     -- Packer can manage itself
-    use 'wbthomason/packer.nvim'
-    use 'nvim-tree/nvim-web-devicons'
+    use('wbthomason/packer.nvim')
 
-    use {
-        'nvim-telescope/telescope.nvim', tag = '0.1.1',
+    -- Icons
+    use('nvim-tree/nvim-web-devicons')
+
+    -- Indent Blanklines
+    use("lukas-reineke/indent-blankline.nvim")
+
+    -- Telescope
+    use({
+        'nvim-telescope/telescope.nvim', branch = '0.1.x',
         -- or                            , branch = '0.1.x',
         requires = { {'nvim-lua/plenary.nvim'} }
-    }
+    })
 
+    -- Themes
     use('folke/tokyonight.nvim')
     use({ 'rose-pine/neovim', as = 'rose-pine' })
 
+    -- Treesitter
     use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
     use('nvim-treesitter/playground')
+    use('nvim-treesitter/nvim-treesitter-context')
+
+    -- Harpoon
     use('ThePrimeagen/harpoon')
+
+    -- Undotree
     use('mbbill/undotree')
+
+    -- Fugitive
     use('tpope/vim-fugitive')
 
-    use {
+    -- LSP Zero
+    use({
         'VonHeikemen/lsp-zero.nvim',
         branch = 'v2.x',
         requires = {
             -- LSP Support
             {'neovim/nvim-lspconfig'},             -- Required
-            {                                      -- Optional
-            'williamboman/mason.nvim',
-            run = function()
-                pcall(vim.cmd, 'MasonUpdate')
-            end,
-        },
-        {'williamboman/mason-lspconfig.nvim'}, -- Optional
+            {'williamboman/mason.nvim'},           -- Optional
+            {'williamboman/mason-lspconfig.nvim'}, -- Optional
 
-        -- Autocompletion
-        {'hrsh7th/nvim-cmp'},     -- Required
-        {'hrsh7th/cmp-nvim-lsp'}, -- Required
-        {'L3MON4D3/LuaSnip'},     -- Required
-    }
-}
+            -- Autocompletion
+            {'hrsh7th/nvim-cmp'},         -- Required
+            {'hrsh7th/cmp-nvim-lsp'},     -- Required
+            {'hrsh7th/cmp-buffer'},       -- Optional
+            {'hrsh7th/cmp-path'},         -- Optional
+            {'saadparwaiz1/cmp_luasnip'}, -- Optional
+            {'hrsh7th/cmp-nvim-lua'},     -- Optional
 
-use {"akinsho/toggleterm.nvim", tag = '*', config = function()
-    require("toggleterm").setup()
-end}
+            -- Snippets
+            {'L3MON4D3/LuaSnip'},             -- Required
+            {'rafamadriz/friendly-snippets'}, -- Required
+        }
+    })
 
-use {
-    'nvim-lualine/lualine.nvim',
-    requires = { 'nvim-tree/nvim-web-devicons', opt = true }
-}
+    -- Toggleterm
+    use({"akinsho/toggleterm.nvim", tag = '*', config = function()
+        require("toggleterm").setup()
+    end})
 
-use ('christoomey/vim-tmux-navigator')
+    -- Lualine
+    use({
+        'nvim-lualine/lualine.nvim',
+        requires = { 'nvim-tree/nvim-web-devicons', opt = true }
+    })
 
-use {
-    'numToStr/Comment.nvim',
-    config = function()
-        require('Comment').setup()
-    end
-}
+    -- Vim/ Tmux Navigator
+    use('christoomey/vim-tmux-navigator')
 
-use ('nvim-tree/nvim-tree.lua')
+    -- Comment
+    use({
+        'numToStr/Comment.nvim',
+        config = function()
+            require('Comment').setup()
+        end
+    })
 
-use {
-    "windwp/nvim-autopairs",
-    config = function() require("nvim-autopairs").setup {} end
-}
+    -- Nvim Tree
+    use('nvim-tree/nvim-tree.lua')
 
-use {'akinsho/bufferline.nvim', tag = "v3.*", requires = 'nvim-tree/nvim-web-devicons'}
+    -- Autopairs
+    use({
+        "windwp/nvim-autopairs",
+        config = function() require("nvim-autopairs").setup {} end
+    })
+
+    -- Bufferline
+    use({'akinsho/bufferline.nvim', tag = "v3.*", requires = 'nvim-tree/nvim-web-devicons'})
 
 end)

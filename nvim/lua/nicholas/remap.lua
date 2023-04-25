@@ -2,7 +2,7 @@
 vim.g.mapleader = " "
 
 -- explorer
-vim.keymap.set("n", "<leader>ee", ":Ex<CR>")
+-- vim.keymap.set("n", "<leader>ee", ":Ex<CR>")
 
 -- move selected lines up and down
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
@@ -52,7 +52,7 @@ vim.keymap.set("n", "<leader>Y", [["+Y]])
 -- plugins
 
 -- NvimTree
-vim.keymap.set("n", "<leader>et", ":NvimTreeToggle<CR>")
+vim.keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>")
 
 -- Bufferline
 vim.keymap.set("n", "<leader>1", "<Cmd>BufferLineGoToBuffer 1<CR>")
@@ -65,4 +65,4 @@ vim.keymap.set("n", "<leader>7", "<Cmd>BufferLineGoToBuffer 7<CR>")
 vim.keymap.set("n", "<leader>8", "<Cmd>BufferLineGoToBuffer 8<CR>")
 vim.keymap.set("n", "<leader>9", "<Cmd>BufferLineGoToBuffer 9<CR>")
 vim.keymap.set("n", "<leader>$", "<Cmd>BufferLineGoToBuffer -1<CR>")
-vim.keymap.set("n", "<leader>bd", "<Cmd>bd<CR>")
+-- vim.keymap.set("n", "<leader>bd", "<Cmd>bd<CR> <Cmd>")
