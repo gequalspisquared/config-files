@@ -66,3 +66,6 @@ vim.keymap.set("n", "<leader>8", "<Cmd>BufferLineGoToBuffer 8<CR>")
 vim.keymap.set("n", "<leader>9", "<Cmd>BufferLineGoToBuffer 9<CR>")
 vim.keymap.set("n", "<leader>$", "<Cmd>BufferLineGoToBuffer -1<CR>")
 -- vim.keymap.set("n", "<leader>bd", "<Cmd>bd<CR> <Cmd>")
+
+-- Trouble
+vim.keymap.set("n", "<leader>tt", "<Cmd>TroubleToggle<CR>")

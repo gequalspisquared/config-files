@@ -48,6 +48,6 @@ lsp.set_sign_icons({
 
 lsp.setup()
 
-vim.diagnostic.config({
-    virtual_text = true
-})
+-- vim.diagnostic.config({
+--     virtual_text = true
+-- })
