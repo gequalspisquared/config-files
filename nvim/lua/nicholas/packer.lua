@@ -39,6 +39,10 @@ return require('packer').startup(function(use)
     -- Themes
     use('folke/tokyonight.nvim')
     use({ 'rose-pine/neovim', as = 'rose-pine' })
+    use({"akinsho/horizon.nvim", tag = "*"})
+    use("rebelot/kanagawa.nvim")
+    use("EdenEast/nightfox.nvim")
+    use('marko-cerovac/material.nvim')
 
     -- Treesitter
     use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
@@ -112,4 +116,28 @@ return require('packer').startup(function(use)
     -- Bufferline
     use({'akinsho/bufferline.nvim', tag = "v3.*", requires = 'nvim-tree/nvim-web-devicons'})
 
+    -- Autotag
+    use('windwp/nvim-ts-autotag')
+
+    -- Neorg
+    use({
+        "nvim-neorg/neorg",
+        config = function()
+            require('neorg').setup {
+                load = {
+                    ["core.defaults"] = {}, -- Loads default behaviour
+                    ["core.concealer"] = {}, -- Adds pretty icons to your documents
+                    ["core.dirman"] = { -- Manages Neorg workspaces
+                    config = {
+                        workspaces = {
+                            notes = "~/notes",
+                        },
+                    },
+                },
+            },
+        }
+        end,
+        run = ":Neorg sync-parsers",
+        requires = "nvim-lua/plenary.nvim",
+    })
 end)

@@ -7,6 +7,6 @@ end)
 
 require('telescope').setup {
     defaults = {
-        file_ignore_patterns = {"./node_modules/*", "./target/*"},
+        file_ignore_patterns = {"./node_modules/%", "./target/%", "%.o"},
     }
 }

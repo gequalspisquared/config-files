@@ -1,6 +1,16 @@
+require("nvim-treesitter.parsers").list.xml = {
+	install_info = {
+		url = "https://github.com/Trivernis/tree-sitter-xml",
+		files = { "src/parser.c" },
+		generate_requires_npm = true,
+		branch = "main",
+	},
+	filetype = "xml",
+}
+
 require'nvim-treesitter.configs'.setup {
   -- A list of parser names, or "all" (the five listed parsers should always be installed)
-  ensure_installed = { "javascript", "typescript", "python", "rust", "cpp", "c", "lua", "vim", "vimdoc", "query" },
+  ensure_installed = { "javascript", "typescript", "python", "rust", "cpp", "c", "lua", "vim", "vimdoc", "query", "xml" },
 
   -- Install parsers synchronously (only applied to `ensure_installed`)
   sync_install = false,

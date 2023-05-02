@@ -624,7 +624,7 @@ client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_n
 autorun = true
 autorunApps =
 {
-	"fehbg",
+	-- "fehbg",
    --"program1",
    --"program2",
    --"program3",
@@ -639,7 +639,10 @@ end
 
 -- Autostart wifi
 awful.util.spawn_with_shell("pgrep -u $USER -x nm-applet > /dev/null || (nm-applet &)")
-awful.util.spawn_with_shell("feh --bg-scale --randomize ~/.config/awesome/wallpapers/*")
+
+-- Set background
+-- awful.util.spawn_with_shell("feh --bg-scale --randomize ~/.config/awesome/wallpapers/*")
+awful.util.spawn_with_shell("feh --bg-scale ~/.config/awesome/wallpapers/ocean-night.jpg")
 awful.util.spawn_with_shell("compton &")
 
 -- Scale for my screen
